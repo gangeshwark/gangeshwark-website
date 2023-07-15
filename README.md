@@ -2,6 +2,8 @@
 
 [https://www.gangeshwark.com/](https://www.gangeshwark.com/)
 
+[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
+
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
