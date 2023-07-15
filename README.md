@@ -30,5 +30,5 @@ All commands are run from the root of the project, from a terminal:
 
 ## How to deploy to Firebase Hosting
 
-`yarn build`
-`firebase deploy`
+- `yarn build`
+- `firebase deploy`
