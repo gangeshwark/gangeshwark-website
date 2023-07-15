@@ -1,0 +1,35 @@
+---
+import { H1, H2, Link, List, ListItem, Text } from "@/components";
+import { constants } from "@/config";
+import Page from "@/layouts/page.astro";
+---
+
+<Page
+  title="Publications | Gangeshwar Krishnamurthy"
+  description="Publicatipns by Gangeshwar Krishnamurthy"
+  keywords="publications"
+  image="/profile.jpg"
+  type="website"
+>
+  <section class="mb-10">
+    <H1>Publications</H1>
+    <Link href={"https://scholar.google.com/citations?user=G8vpQz4AAAAJ&hl=en"}>
+      Google Scholar
+    </Link>
+  </section>
+
+  <section>
+    <List class="list-none">
+      {
+        constants.publications.map(({ name, description, link, using }) => (
+          <ListItem>
+            <Link href={link}>{name}</Link> — <span>{description}&ensp;</span>
+            <Text class="text-sm leading-relaxed opacity-70">
+              {using?.join(", ")}
+            </Text>
+          </ListItem>
+        ))
+      }
+    </List>
+  </section>
+</Page>
