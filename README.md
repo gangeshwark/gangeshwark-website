@@ -1,6 +1,6 @@
 # Gangeshwar Krishnamurthy's personal website
 
-[https://gangeshwark.com/](https://gangeshwark.com/)
+[https://www.gangeshwark.com/](https://www.gangeshwark.com/)
 
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
