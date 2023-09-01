@@ -3,6 +3,7 @@ import { Link, List, ListItem } from "@/components";
 import { constants } from "@/config";
 import { Email, GitHub, Twitter } from "@/icons";
 import Page from "@/layouts/page.astro";
+import { Image } from "astro:assets";
 ---
 
 <Page
@@ -15,7 +16,7 @@ import Page from "@/layouts/page.astro";
   <h1 class="mb-10 text-4xl font-bold">Hi, I’m Gangeshwar!</h1>
   <section>
     <div>
-      <img
+      <Image
         class={"rounded-full"}
         src={"profile.jpg"}
         alt="Gangeshwar"
@@ -26,9 +27,12 @@ import Page from "@/layouts/page.astro";
   </section>
   <section class="mt-14 space-y-2">
     <h2 class="text-xl font-normal leading-loose sm:leading-loose">
-      I’m the Co-founder & CTO of <a class="underline" href="https://mindfi.co/" target="_blank">MindFi</a>. I love building products and user
-      experiences. I started writing code when I was 14 and do not plan to stop
-      any time soon.
+      I’m the Co-founder & CTO of <a
+        class="underline"
+        href="https://mindfi.co/"
+        target="_blank">MindFi</a
+      >. I love building products and user experiences. I started writing code
+      when I was 14 and do not plan to stop any time soon.
     </h2>
 
     <h2 class="text-xl font-normal leading-loose sm:leading-loose">
@@ -36,7 +40,6 @@ import Page from "@/layouts/page.astro";
       else!
     </h2>
   </section>
-  
 
   <section class="mt-12 space-x-3">
     <Link
