@@ -6,6 +6,7 @@ import "@/styles/layers.css";
 
 import { constants } from "@/config";
 import { Theme } from "@/icons";
+import { ViewTransitions } from "astro:transitions";
 
 type Props = {
   title: string;
@@ -60,11 +61,11 @@ const props = Astro.props as Props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={constants.site + Astro.url.pathname} />
     <title>{props.title}</title>
+    <ViewTransitions />
     <!-- head -->
     <script
       type="text/partytown"
-      src="https://www.googletagmanager.com/gtag/js?id=G-SXD437T2ZD"
-    ></script>
+      src="https://www.googletagmanager.com/gtag/js?id=G-SXD437T2ZD"></script>
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -130,27 +131,37 @@ const props = Astro.props as Props;
     </section>
 
     <script is:inline>
-      const theme = {
-        initial: () => {
-          if (localStorage.getItem("theme"))
-            return localStorage.getItem("theme");
-          if (matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
-          return "light";
-        },
-        current: () => document.documentElement.getAttribute("color-scheme"),
-        set: (theme) => {
-          document.documentElement.setAttribute("color-scheme", theme);
-          localStorage.setItem("theme", theme);
-        },
+      const theme_initial = () => {
+        if (localStorage.getItem("theme")) {
+          return localStorage.getItem("theme");
+        }
+        if (matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      };
+      const theme_current = () =>
+        document.documentElement.getAttribute("color-scheme");
+      const theme_set = (theme) => {
+        document.documentElement.setAttribute("color-scheme", theme);
+        localStorage.setItem("theme", theme);
       };
 
-      theme.set(theme.initial());
-      const toggle = () =>
-        theme.set(theme.current() === "light" ? "dark" : "light");
+      const set_initial = () => theme_set(theme_initial());
+      set_initial();
 
-      document
-        .querySelector("#toggle-theme")
-        ?.addEventListener("click", toggle);
+      const toggle_theme = () =>
+        theme_set(theme_current() === "light" ? "dark" : "light");
+      document.addEventListener(
+        "astro:page-load",
+        () => {
+          document
+            .querySelector("#toggle-theme")
+            ?.addEventListener("click", toggle_theme);
+        },
+        { once: false }
+      );
+      document.addEventListener("astro:after-swap", set_initial);
     </script>
   </body>
 </html>

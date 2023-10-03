@@ -4,6 +4,7 @@ import { constants } from "@/config";
 import { Email, GitHub, Twitter } from "@/icons";
 import Page from "@/layouts/page.astro";
 import { Image } from "astro:assets";
+import profile_image from "public/profile.jpg";
 ---
 
 <Page
@@ -18,7 +19,7 @@ import { Image } from "astro:assets";
     <div>
       <Image
         class={"rounded-full"}
-        src={"profile.jpg"}
+        src={profile_image}
         alt="Gangeshwar"
         width={150}
         height={150}
