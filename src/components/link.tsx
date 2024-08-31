@@ -21,7 +21,7 @@ export const Link = (props: JSX.AnchorHTMLAttributes<HTMLAnchorElement>) => {
         </a>
       }
     >
-      <a href={props.href} rel="prefetch" {...props} classList={{ [styles.base]: true, [styles.focus]: true }}>
+      <a href={props.href} data-astro-prefetch="viewport" {...props} classList={{ [styles.base]: true, [styles.focus]: true }}>
         {props.children}
       </a>
     </Show>

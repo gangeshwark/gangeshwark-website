@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
 import solid from "@astrojs/solid-js";
 import tailwind from "@astrojs/tailwind";
@@ -21,9 +20,9 @@ export default defineConfig({
     syntaxHighlight: false,
     rehypePlugins: [prism],
   },
+  prefetch: true,
   integrations: [
     mdx(),
-    prefetch(),
     sitemap(),
     solid(),
     tailwind(),
