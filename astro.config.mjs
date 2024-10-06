@@ -8,7 +8,7 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gangeshwark.com",
+  site: "https://www.gangeshwark.com",
   vite: {
     resolve: {
       alias: {
