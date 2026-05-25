@@ -1,10 +1,10 @@
 ---
 import { Link, List, ListItem } from "@/components";
 import { constants } from "@/config";
-import { Email, GitHub, Twitter } from "@/icons";
+import iconMail from "@tabler/icons/outline/mail.svg?raw";
+import iconGithub from "@tabler/icons/outline/brand-github.svg?raw";
+import iconX from "@tabler/icons/outline/brand-x.svg?raw";
 import Page from "@/layouts/page.astro";
-import { Image } from "astro:assets";
-import profile_image from "public/profile.jpg";
 ---
 
 <Page
@@ -14,12 +14,12 @@ import profile_image from "public/profile.jpg";
   image={constants.profile.image}
   type="website"
 >
-  <h1 class="mb-10 text-4xl font-bold">Hi, I’m Gangeshwar!</h1>
+  <h1 class="mb-10 text-4xl font-bold">I build products that scale.</h1>
   <section>
     <div>
-      <Image
-        class={"rounded-full"}
-        src={profile_image}
+      <img
+        class="rounded-full"
+        src="/profile.jpg"
         alt="Gangeshwar"
         width={150}
         height={150}
@@ -28,48 +28,36 @@ import profile_image from "public/profile.jpg";
   </section>
   <section class="mt-14 space-y-2">
     <h2 class="text-xl font-normal leading-loose sm:leading-loose">
-      I’m the Co-founder & CTO of <a
+      I’m Gangeshwar Krishnamurthy, Co-founder & CTO of <a
         class="underline"
         href="https://mindfi.co/"
         target="_blank">MindFi (YC S21)</a
-      > based in Singapore. I love building products and user experiences. I started
-      writing code when I was 14 and do not plan to stop any time soon.
+      > in Singapore. I lead engineering across product, platform, and AI systems
+      with a focus on reliability, speed, and user impact.
     </h2>
 
     <h2 class="text-xl font-normal leading-loose sm:leading-loose">
-      Hit me up if you want to talk about startups, technology, or anything
-      else!
+      Over the last decade, I’ve worked across research and startups, turning
+      complex ideas into production systems used by real people.
     </h2>
   </section>
 
-  <section class="mt-12 space-x-3">
-    <Link
-      href={constants.profile.links.email}
-      classList={{ ["text-default"]: true }}
-      aria-label="Email"
-    >
-      <Email />
+  <section class="mt-12 flex items-center gap-4">
+    <Link href={constants.profile.links.email} classList={{ ["text-default"]: true }} aria-label="Email">
+      <span class="inline-flex [&>svg]:h-5 [&>svg]:w-5" set:html={iconMail} />
     </Link>
 
-    <Link
-      href={constants.profile.links.github}
-      classList={{ ["text-default"]: true }}
-      aria-label="GitHub"
-    >
-      <GitHub />
+    <Link href={constants.profile.links.github} classList={{ ["text-default"]: true }} aria-label="GitHub">
+      <span class="inline-flex [&>svg]:h-5 [&>svg]:w-5" set:html={iconGithub} />
     </Link>
 
-    <Link
-      href={constants.profile.links.twitter}
-      classList={{ ["text-default"]: true }}
-      aria-label="Twitter"
-    >
-      <Twitter />
+    <Link href={constants.profile.links.twitter} classList={{ ["text-default"]: true }} aria-label="X">
+      <span class="inline-flex [&>svg]:h-5 [&>svg]:w-5" set:html={iconX} />
     </Link>
   </section>
 
   <section class="mb-16">
-    <h2 class="mt-28 text-2xl font-bold">Research Publications</h2>
+    <h2 class="mt-28 text-2xl font-bold">Selected Research</h2>
 
     <List class="mt-12 list-none space-y-4">
       {
@@ -84,7 +72,7 @@ import profile_image from "public/profile.jpg";
     </List>
 
     <Link href="/publications" class="mt-10 inline-block text-sm font-medium">
-      View all publications <span class="ml-2">→</span>
+      Browse all publications <span class="ml-2">→</span>
     </Link>
   </section>
 </Page>

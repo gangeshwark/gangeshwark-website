@@ -7,7 +7,7 @@ const profile = {
   links: {
     email: 'mailto:me@gangeshwark.com',
     github: 'https://github.com/gangeshwark',
-    twitter: 'https://twitter.com/gangeshwark',
+    twitter: 'https://x.com/gangeshwark',
     linkedin: 'https://linkedin.com/in/gangeshwark',
   },
 }
@@ -20,11 +20,12 @@ export const constants = {
     internal: [
       { name: 'Home', link: '/' },
       { name: 'Publications', link: '/publications' },
+      // { name: 'Blog', link: '/blog' },
     ],
     external: [
       { name: 'Email', link: profile.links.email },
       { name: 'GitHub', link: profile.links.github },
-      { name: 'Twitter', link: profile.links.twitter },
+      { name: 'X', link: profile.links.twitter },
       { name: 'LinkedIn', link: profile.links.linkedin },
     ],
   },
